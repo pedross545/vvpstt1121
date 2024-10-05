@@ -8,18 +8,15 @@ jobs:
     name: Start Building...
     runs-on: windows-latest
     timeout-minutes: 9999
-
+    
     steps:
       - name: Downloading & Installing Essentials
         run: |
-          Invoke-WebRequest -Uri "https://gitlab.com/chamod2/lm_win-10_github_rdp/-/raw/main/Downloads.bat" -OutFile "Downloads.bat"
+          Invoke-WebRequest -Uri "https://gitlab.com/chamod12/lm_win-10_github_rdp/-/raw/main/Downloads.bat" -OutFile "Downloads.bat"
           cmd /c Downloads.bat
 
-      - name: Download loop.bat
-        run: Invoke-WebRequest -Uri "URL_DO_LOOP.BAT" -OutFile "loop.bat"
-
       - name: Connect to LiteManager
-        run: echo "Connection to LiteManager Step (especificar comandos aqui)"
+        run: cmd /c show.bat
 
       - name: Time Counter
         run: cmd /c loop.bat
